@@ -1,7 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using Commons;
-
-// We read the lines
+﻿// We read the lines
 string[] lines = await File.ReadAllLinesAsync("Day2Input.txt");
 
 int currentHorizontalPos = 0;
