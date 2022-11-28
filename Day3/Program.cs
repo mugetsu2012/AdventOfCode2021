@@ -4,39 +4,21 @@
 int lineLength = inputLines[0].Length;
 string gammaRate = string.Empty;
 string epsilonRate = string.Empty;
-Dictionary<int, int> commonCount = new Dictionary<int, int>();
 
 // First, we loop all the first digit of the line, the the second and so on
 for (int i = 0; i < lineLength; i++)
 {
-    int oneCount = 0;
-    int zeroCount = 0;
-
-    
-
-    // We loop the list of lines, reading the specif index to get the most common in that position
-    for (int j = 0; j < inputLines.Length; j++)
-	{
-        if (inputLines[j][i] == '1')
-        {
-            oneCount++;
-        }
-        else
-        {
-            zeroCount++;
-        }
-    }
+    int oneCount = inputLines.Count(x => x[i] == '1');
+    int zeroCount = inputLines.Count(x => x[i] == '0');
 
     // We print the most common in that position
     if (oneCount > zeroCount)
-    {
-        commonCount.Add(i, 1);
+    {        
         gammaRate += "1";
         epsilonRate += "0";
     }
     else
-    {
-        commonCount.Add(i, 0);
+    {        
         gammaRate += "0";
         epsilonRate += "1";
     }
